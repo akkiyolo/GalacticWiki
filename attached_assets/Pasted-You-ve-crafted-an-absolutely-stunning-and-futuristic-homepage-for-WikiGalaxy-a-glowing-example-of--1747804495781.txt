@@ -1,0 +1,63 @@
+You've crafted an absolutely stunning and futuristic homepage for WikiGalaxy — a glowing example of modern web design done right! From the sleek search bar to the interstellar theme, every detail feels like a journey through a cosmic library. ✨🌌
+
+Now let’s take this project to new galaxies!
+
+🌠 Goal:
+Create two new pages for the WikiGalaxy website — an About page and a Contact page. Both pages must follow the same space-inspired, animated, 3D exotic design as the homepage. Use visually engaging effects like floating planets, rockets, satellites, and starfields across the site.
+
+🌌 About Page:
+Design a stylish, animated "About" page featuring a galactic background with cosmic elements (e.g., animated stars, planets slowly orbiting, rocket trails). Make the layout immersive and use futuristic fonts and glows.
+
+Include this text content:
+
+🧑‍🚀 About the Creator
+I’m Akshat Shukla, the mind behind WikiGalaxy — your portal to the universe of knowledge. I'm passionate about crafting immersive, tech-driven experiences that help people learn in new and engaging ways.
+
+WikiGalaxy is built using the Wikipedia-API and a mix of futuristic frontend and backend technologies. It's more than just a Wikipedia search — it's an interstellar quest for information.
+
+Contact and Social Info:
+
+Email: akshatshukla777@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/akshat-shukla-63516225a/
+
+GitHub: https://github.com/akkiyolo
+
+X: https://x.com/akshatshukla069
+
+Include icons and cool animations like floating astronaut, spinning satellites, or glowing text overlays.
+
+🛰️ Contact Page:
+Create a futuristic contact page with animated celestial visuals and a sleek UI.
+
+Include the following features:
+
+A glowing contact form:
+
+Fields: Name, Email, Message
+
+Submit button with rocket launch animation
+
+Floating or orbiting planets, rockets, and satellites in the background
+
+Display contact info again:
+
+Email: akshatshukla777@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/akshat-shukla-63516225a/
+
+GitHub: https://github.com/akkiyolo
+
+X: https://x.com/akshatshukla069
+
+Maintain the same header and footer from the homepage, with space fog or parallax star scroll effects.
+
+🎨 Design & Animation Suggestions:
+Futuristic fonts like Orbitron or Exo
+
+CSS3 or GSAP for animations
+
+Subtle hover effects and space sounds on interaction
+
+Responsive for all devices
+

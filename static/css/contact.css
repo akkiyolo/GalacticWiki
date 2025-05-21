@@ -1,0 +1,605 @@
+/* Contact Page Styles */
+.contact-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    position: relative;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.contact-container {
+    padding: 0 1rem;
+}
+
+.contact-card {
+    background: var(--card-gradient);
+    backdrop-filter: blur(10px);
+    border-radius: var(--card-radius);
+    border: var(--card-border);
+    box-shadow: var(--card-shadow);
+    padding: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    z-index: 10;
+}
+
+.contact-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-bright);
+    text-shadow: var(--glow-text);
+    position: relative;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+}
+
+.contact-content {
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Orbiting planet animation */
+.orbiting-system {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ff5ebc, #6a50ff);
+    box-shadow: 0 0 10px #ff5ebc, 0 0 20px rgba(255, 94, 188, 0.5);
+    animation: pulseSun 3s ease-in-out infinite;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    animation: rotateOrbit 10s linear infinite;
+}
+
+.planet-small {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #50e3ff, #4a54ff);
+    box-shadow: 0 0 8px rgba(80, 227, 255, 0.7);
+}
+
+/* Form Styles */
+.cosmic-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin-bottom: 0.5rem;
+}
+
+.input-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.cosmic-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(14, 22, 56, 0.6);
+    border: 1px solid rgba(106, 80, 255, 0.3);
+    color: var(--text-bright);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    transition: all var(--transition-medium);
+    border-radius: 8px;
+    z-index: 2;
+    position: relative;
+}
+
+.cosmic-input:focus {
+    outline: none;
+    background: rgba(26, 33, 81, 0.6);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(106, 80, 255, 0.4);
+}
+
+.input-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(106, 80, 255, 0.2),
+        rgba(80, 227, 255, 0.2),
+        transparent
+    );
+    z-index: 1;
+    animation: inputGlow 3s ease-in-out infinite;
+}
+
+.cosmic-input:focus + .input-glow {
+    animation: inputGlowFocus 1.5s ease-in-out infinite;
+}
+
+.form-action {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Submit button with rocket animation */
+.cosmic-button {
+    position: relative;
+    padding: 0.8rem 1.5rem;
+    padding-right: 3.5rem;
+    background: var(--primary-color);
+    color: var(--text-bright);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all var(--transition-medium);
+    box-shadow: 0 0 15px rgba(106, 80, 255, 0.5);
+}
+
+.cosmic-button.small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.cosmic-button:hover {
+    background: #7d66ff;
+    box-shadow: 0 0 20px rgba(106, 80, 255, 0.7);
+    transform: translateY(-3px);
+}
+
+.cosmic-button:active {
+    transform: translateY(-1px);
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.button-rocket {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.cosmic-button:hover .button-rocket {
+    transform: translateY(-50%) translateX(3px);
+}
+
+.cosmic-button.launching .button-rocket {
+    animation: launchRocket 1.5s ease-out forwards;
+}
+
+.rocket-trail {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0;
+}
+
+.cosmic-button.launching .rocket-trail {
+    animation: showTrail 0.3s ease-out forwards;
+}
+
+.rocket-trail .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0;
+}
+
+.cosmic-button.launching .rocket-trail .particle:nth-child(1) {
+    animation: particleTrail 1.5s ease-out 0.1s;
+}
+
+.cosmic-button.launching .rocket-trail .particle:nth-child(2) {
+    animation: particleTrail 1.5s ease-out 0.2s;
+}
+
+.cosmic-button.launching .rocket-trail .particle:nth-child(3) {
+    animation: particleTrail 1.5s ease-out 0.3s;
+}
+
+/* Contact Info Styles */
+.contact-info {
+    background: rgba(10, 18, 50, 0.6);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+}
+
+.info-desc {
+    color: var(--text-medium);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-link {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: rgba(26, 33, 81, 0.5);
+    border-radius: 8px;
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: all var(--transition-medium);
+    border: 1px solid rgba(106, 80, 255, 0.2);
+}
+
+.info-link:hover {
+    background: rgba(106, 80, 255, 0.2);
+    transform: translateX(5px);
+    color: var(--text-bright);
+    border-color: rgba(106, 80, 255, 0.5);
+}
+
+.info-link i {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    color: var(--accent-color);
+}
+
+/* Spacecraft Animation */
+.spacecraft {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 80px;
+    animation: floatSpacecraft 8s ease-in-out infinite;
+}
+
+.spacecraft-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ufo-light {
+    animation: blinkLight 2s ease-in-out infinite;
+}
+
+.light-1 { animation-delay: 0s; }
+.light-2 { animation-delay: 0.5s; }
+.light-3 { animation-delay: 1s; }
+.light-4 { animation-delay: 1.5s; }
+
+.ufo-beam {
+    animation: pulseBeam 3s ease-in-out infinite;
+    transform-origin: center top;
+}
+
+/* Floating Stars */
+.floating-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    animation: twinkleStar ease-in-out infinite;
+}
+
+.star-1 {
+    top: 20%;
+    left: 15%;
+    width: 4px;
+    height: 4px;
+    animation-duration: 3s;
+}
+
+.star-2 {
+    top: 70%;
+    left: 85%;
+    animation-duration: 4s;
+}
+
+.star-3 {
+    top: 40%;
+    left: 60%;
+    animation-duration: 5s;
+}
+
+.star-4 {
+    top: 80%;
+    left: 30%;
+    width: 2px;
+    height: 2px;
+    animation-duration: 3.5s;
+}
+
+.star-5 {
+    top: 10%;
+    left: 75%;
+    animation-duration: 4.5s;
+}
+
+/* Success Message */
+.success-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 18, 50, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--card-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity var(--transition-medium);
+}
+
+.success-message.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.success-content {
+    text-align: center;
+    padding: 2rem;
+    max-width: 500px;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    animation: successIconAppear 0.5s ease-out;
+}
+
+.success-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-bright);
+    margin-bottom: 1rem;
+    animation: successTextAppear 0.5s ease-out 0.2s both;
+}
+
+.success-text {
+    color: var(--text-medium);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    animation: successTextAppear 0.5s ease-out 0.4s both;
+}
+
+#back-btn {
+    animation: successTextAppear 0.5s ease-out 0.6s both;
+}
+
+/* Animations */
+@keyframes pulseSun {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+@keyframes rotateOrbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes inputGlow {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes inputGlowFocus {
+    0% { left: -100%; }
+    25%, 75% { left: 100%; }
+    100% { left: 100%; }
+}
+
+@keyframes launchRocket {
+    0% { transform: translateY(-50%) translateX(0); }
+    10% { transform: translateY(-50%) translateX(5px); }
+    30% { transform: translateY(-50%) translateX(10px); opacity: 1; }
+    100% { transform: translateY(-50%) translateX(50px); opacity: 0; }
+}
+
+@keyframes showTrail {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes particleTrail {
+    0% { transform: translateX(0); opacity: 0; }
+    20% { opacity: 0.8; }
+    100% { transform: translateX(-30px); opacity: 0; }
+}
+
+@keyframes floatSpacecraft {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, -10px) rotate(-2deg); }
+    50% { transform: translate(0, -5px) rotate(0deg); }
+    75% { transform: translate(-5px, -10px) rotate(2deg); }
+}
+
+@keyframes blinkLight {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes pulseBeam {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50% { opacity: 0.6; transform: scaleY(1.1); }
+}
+
+@keyframes twinkleStar {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes successIconAppear {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes successTextAppear {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .contact-content .row {
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-title {
+        font-size: 1.6rem;
+    }
+    
+    .orbiting-system {
+        top: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .info-title {
+        font-size: 1.3rem;
+    }
+    
+    .spacecraft {
+        width: 90px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 1.2rem;
+    }
+    
+    .contact-title {
+        font-size: 1.4rem;
+    }
+    
+    .orbiting-system {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cosmic-button {
+        padding: 0.7rem 1.3rem;
+        padding-right: 3.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .info-link i {
+        font-size: 1.1rem;
+    }
+    
+    .success-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .success-title {
+        font-size: 1.4rem;
+    }
+    
+    .success-text {
+        font-size: 1rem;
+    }
+}

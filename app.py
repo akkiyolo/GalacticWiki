@@ -23,6 +23,16 @@ def index():
     """Render the main page of the application."""
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    """Render the about page of the application."""
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    """Render the contact page of the application."""
+    return render_template('contact.html')
+
 @app.route('/api/search', methods=['GET'])
 def search_wikipedia():
     """

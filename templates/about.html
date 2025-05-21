@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About WikiGalaxy - Explore Knowledge Across the Universe</title>
+    
+    <!-- Font imports -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="space-background"></canvas>
+    
+    <!-- Main Content -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="cosmic-header">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="planet" cx="50" cy="50" r="40" fill="url(#planet-gradient)"/>
+                    <ellipse class="ring" cx="50" cy="50" rx="48" ry="15" fill="none" stroke="url(#ring-gradient)" stroke-width="2"/>
+                    <defs>
+                        <linearGradient id="planet-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4a54ff"/>
+                            <stop offset="100%" stop-color="#0c1445"/>
+                        </linearGradient>
+                        <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9c6bff"/>
+                            <stop offset="50%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="#9c6bff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1 class="site-title">WikiGalaxy</h1>
+            </div>
+            <nav class="cosmic-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link active">About</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
+        
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-card">
+                    <div class="creator-info">
+                        <div class="creator-avatar">
+                            <!-- Animated astronaut svg -->
+                            <svg class="astronaut-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Helmet -->
+                                <ellipse cx="100" cy="80" rx="50" ry="55" fill="rgba(200, 220, 255, 0.7)" />
+                                <!-- Visor -->
+                                <path d="M 75 80 A 40 40 0 0 0 125 80" fill="rgba(100, 150, 255, 0.5)" />
+                                <!-- Suit -->
+                                <rect x="80" y="125" width="40" height="50" rx="10" fill="#6a50ff" />
+                                <rect x="70" y="115" width="60" height="25" rx="10" fill="#6a50ff" />
+                                <!-- Arms -->
+                                <rect x="55" y="120" width="25" height="15" rx="7" fill="#6a50ff" transform="rotate(-20, 55, 120)" />
+                                <rect x="120" y="120" width="25" height="15" rx="7" fill="#6a50ff" transform="rotate(20, 145, 120)" />
+                                <!-- Legs -->
+                                <rect x="85" y="170" width="15" height="25" rx="7" fill="#6a50ff" transform="rotate(-10, 85, 170)" />
+                                <rect x="100" y="170" width="15" height="25" rx="7" fill="#6a50ff" transform="rotate(10, 115, 170)" />
+                                <!-- Oxygen tank -->
+                                <rect x="90" y="110" width="20" height="30" rx="5" fill="#a090ff" />
+                                <!-- Stars around astronaut -->
+                                <circle class="star-1" cx="50" cy="50" r="2" fill="white" />
+                                <circle class="star-2" cx="150" cy="40" r="1.5" fill="white" />
+                                <circle class="star-3" cx="40" cy="160" r="1.8" fill="white" />
+                                <circle class="star-4" cx="160" cy="150" r="2.2" fill="white" />
+                                <circle class="star-5" cx="180" cy="80" r="1.7" fill="white" />
+                            </svg>
+                        </div>
+                        <div class="creator-text">
+                            <h2 class="creator-name">Akshat Shukla</h2>
+                            <h3 class="creator-title">Creator of WikiGalaxy</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content">
+                        <p>I'm Akshat Shukla, the mind behind WikiGalaxy — your portal to the universe of knowledge. I'm passionate about crafting immersive, tech-driven experiences that help people learn in new and engaging ways.</p>
+                        
+                        <p>WikiGalaxy is built using the Wikipedia-API and a mix of futuristic frontend and backend technologies. It's more than just a Wikipedia search — it's an interstellar quest for information.</p>
+                        
+                        <div class="satellite-orbit">
+                            <div class="satellite">
+                                <svg class="satellite-svg" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Satellite body -->
+                                    <rect x="30" y="25" width="40" height="10" rx="2" fill="#d4d4ff" />
+                                    <!-- Solar panels -->
+                                    <rect x="10" y="20" width="20" height="20" fill="#6a50ff" />
+                                    <rect x="70" y="20" width="20" height="20" fill="#6a50ff" />
+                                    <!-- Antenna -->
+                                    <line x1="50" y1="25" x2="50" y2="10" stroke="#fff" stroke-width="1" />
+                                    <circle cx="50" cy="10" r="3" fill="#ff5ebc" />
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <h3 class="section-title">Contact & Social Info</h3>
+                        
+                        <div class="social-links">
+                            <a href="mailto:akshatshukla777@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>akshatshukla777@gmail.com</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/akshat-shukla-63516225a/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/akkiyolo" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://x.com/akshatshukla069" target="_blank" class="social-link">
+                                <i class="fab fa-x-twitter"></i>
+                                <span>X</span>
+                            </a>
+                        </div>
+                        
+                        <div class="floating-planets">
+                            <div class="planet planet-1"></div>
+                            <div class="planet planet-2"></div>
+                            <div class="planet planet-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rocket animation -->
+            <div class="rocket-container">
+                <svg class="rocket-svg" viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rocket body -->
+                    <path d="M 30 10 L 45 50 L 45 100 L 15 100 L 15 50 Z" fill="#ff5ebc" />
+                    <!-- Rocket window -->
+                    <circle cx="30" cy="40" r="8" fill="#50e3ff" />
+                    <!-- Rocket fins -->
+                    <path d="M 15 80 L 0 100 L 15 100 Z" fill="#a090ff" />
+                    <path d="M 45 80 L 60 100 L 45 100 Z" fill="#a090ff" />
+                    <!-- Rocket flame -->
+                    <path class="rocket-flame" d="M 22 100 L 30 120 L 38 100 Z" fill="#ffff50" />
+                </svg>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="cosmic-footer">
+            <div class="starfield-bottom"></div>
+            <p class="footer-text">© 2023 WikiGalaxy | Explore the Universe of Knowledge</p>
+            <div class="footer-links">
+                <a href="/" class="footer-link">Home</a>
+                <a href="/about" class="footer-link">About</a>
+                <a href="/contact" class="footer-link">Contact</a>
+                <a href="https://www.wikipedia.org/" target="_blank" class="footer-link">Wikipedia</a>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/three_background.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ui_effects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+</body>
+</html>

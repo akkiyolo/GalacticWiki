@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact WikiGalaxy - Explore Knowledge Across the Universe</title>
+    
+    <!-- Font imports -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="space-background"></canvas>
+    
+    <!-- Main Content -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="cosmic-header">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="planet" cx="50" cy="50" r="40" fill="url(#planet-gradient)"/>
+                    <ellipse class="ring" cx="50" cy="50" rx="48" ry="15" fill="none" stroke="url(#ring-gradient)" stroke-width="2"/>
+                    <defs>
+                        <linearGradient id="planet-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4a54ff"/>
+                            <stop offset="100%" stop-color="#0c1445"/>
+                        </linearGradient>
+                        <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9c6bff"/>
+                            <stop offset="50%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="#9c6bff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1 class="site-title">WikiGalaxy</h1>
+            </div>
+            <nav class="cosmic-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contact" class="nav-link active">Contact</a>
+            </nav>
+        </header>
+        
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-card">
+                    <h2 class="contact-title">Send a Cosmic Message</h2>
+                    
+                    <!-- Orbiting planet animation -->
+                    <div class="orbiting-system">
+                        <div class="sun"></div>
+                        <div class="orbit">
+                            <div class="planet-small"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- Contact Form -->
+                                <div class="cosmic-form">
+                                    <form id="contact-form">
+                                        <div class="form-group">
+                                            <label for="name" class="form-label">Your Name</label>
+                                            <div class="input-container">
+                                                <input type="text" id="name" name="name" class="form-control cosmic-input" placeholder="Enter your name" required>
+                                                <div class="input-glow"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Your Email</label>
+                                            <div class="input-container">
+                                                <input type="email" id="email" name="email" class="form-control cosmic-input" placeholder="Enter your email" required>
+                                                <div class="input-glow"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="message" class="form-label">Your Message</label>
+                                            <div class="input-container">
+                                                <textarea id="message" name="message" class="form-control cosmic-input" rows="5" placeholder="Type your message here..." required></textarea>
+                                                <div class="input-glow"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-action">
+                                            <button type="submit" class="cosmic-button" id="submit-btn">
+                                                <span class="button-text">Launch Message</span>
+                                                <svg class="button-rocket" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19ZM5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5ZM21.61 2.39C21.61 2.39 16.66 .269 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.79 17.45 10.61 17.63 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39Z" fill="currentColor"/>
+                                                </svg>
+                                                <div class="rocket-trail">
+                                                    <div class="particle"></div>
+                                                    <div class="particle"></div>
+                                                    <div class="particle"></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <!-- Contact Info -->
+                                <div class="contact-info">
+                                    <h3 class="info-title">Cosmic Coordinates</h3>
+                                    <p class="info-desc">Connect with me on these stellar channels</p>
+                                    
+                                    <div class="info-links">
+                                        <a href="mailto:akshatshukla777@gmail.com" class="info-link">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>akshatshukla777@gmail.com</span>
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/akshat-shukla-63516225a/" target="_blank" class="info-link">
+                                            <i class="fab fa-linkedin"></i>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                        <a href="https://github.com/akkiyolo" target="_blank" class="info-link">
+                                            <i class="fab fa-github"></i>
+                                            <span>GitHub</span>
+                                        </a>
+                                        <a href="https://x.com/akshatshukla069" target="_blank" class="info-link">
+                                            <i class="fab fa-x-twitter"></i>
+                                            <span>X</span>
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Floating spacecraft -->
+                                    <div class="spacecraft">
+                                        <svg class="spacecraft-svg" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- UFO Shape -->
+                                            <ellipse cx="50" cy="35" rx="30" ry="10" fill="#6a50ff" />
+                                            <ellipse cx="50" cy="30" rx="20" ry="10" fill="#50e3ff" opacity="0.7" />
+                                            <!-- Cockpit -->
+                                            <ellipse cx="50" cy="25" rx="10" ry="5" fill="rgba(255, 255, 255, 0.8)" />
+                                            <!-- Lights -->
+                                            <circle class="ufo-light light-1" cx="30" cy="35" r="2" fill="#ffff80" />
+                                            <circle class="ufo-light light-2" cx="40" cy="37" r="2" fill="#ffff80" />
+                                            <circle class="ufo-light light-3" cx="60" cy="37" r="2" fill="#ffff80" />
+                                            <circle class="ufo-light light-4" cx="70" cy="35" r="2" fill="#ffff80" />
+                                            <!-- Beam -->
+                                            <path class="ufo-beam" d="M45 35 L40 50 L60 50 L55 35" fill="rgba(106, 80, 255, 0.3)" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stars -->
+                    <div class="floating-stars">
+                        <div class="star star-1"></div>
+                        <div class="star star-2"></div>
+                        <div class="star star-3"></div>
+                        <div class="star star-4"></div>
+                        <div class="star star-5"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Success Message (Hidden by Default) -->
+            <div class="success-message hidden" id="success-message">
+                <div class="success-content">
+                    <svg class="success-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="#50e3ff"/>
+                    </svg>
+                    <h3 class="success-title">Message Launched Successfully!</h3>
+                    <p class="success-text">Your cosmic communication has been sent. I'll respond as soon as possible.</p>
+                    <button class="cosmic-button small" id="back-btn">
+                        <span class="button-text">Return to Space</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="cosmic-footer">
+            <div class="starfield-bottom"></div>
+            <p class="footer-text">© 2023 WikiGalaxy | Explore the Universe of Knowledge</p>
+            <div class="footer-links">
+                <a href="/" class="footer-link">Home</a>
+                <a href="/about" class="footer-link">About</a>
+                <a href="/contact" class="footer-link">Contact</a>
+                <a href="https://www.wikipedia.org/" target="_blank" class="footer-link">Wikipedia</a>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/three_background.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ui_effects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+</body>
+</html>
