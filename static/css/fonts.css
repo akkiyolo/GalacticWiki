@@ -1,0 +1,41 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Font Classes */
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.font-exo {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Text Styling Classes */
+.text-glow {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.text-primary-glow {
+    text-shadow: 0 0 5px rgba(106, 80, 255, 0.7), 0 0 10px rgba(106, 80, 255, 0.4);
+}
+
+.text-accent-glow {
+    text-shadow: 0 0 5px rgba(80, 227, 255, 0.7), 0 0 10px rgba(80, 227, 255, 0.4);
+}
+
+.text-futuristic {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.text-cosmic {
+    font-family: 'Exo 2', sans-serif;
+    letter-spacing: 0.5px;
+}

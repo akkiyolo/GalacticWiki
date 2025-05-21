@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGalaxy - Explore Knowledge Across the Universe</title>
+    
+    <!-- Font imports -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="space-background"></canvas>
+    
+    <!-- Main Content -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="cosmic-header">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="planet" cx="50" cy="50" r="40" fill="url(#planet-gradient)"/>
+                    <ellipse class="ring" cx="50" cy="50" rx="48" ry="15" fill="none" stroke="url(#ring-gradient)" stroke-width="2"/>
+                    <defs>
+                        <linearGradient id="planet-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4a54ff"/>
+                            <stop offset="100%" stop-color="#0c1445"/>
+                        </linearGradient>
+                        <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9c6bff"/>
+                            <stop offset="50%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="#9c6bff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1 class="site-title">WikiGalaxy</h1>
+            </div>
+            <p class="tagline">Explore Knowledge Across the Universe</p>
+        </header>
+        
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <form id="search-form" class="search-form">
+                    <div class="search-input-container">
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            class="search-input" 
+                            placeholder="Search the knowledge universe..." 
+                            autocomplete="off"
+                            aria-label="Search Wikipedia"
+                        >
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-rocket"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Loading Animation (Hidden by default) -->
+            <div id="loading-animation" class="loading-container hidden">
+                <div class="orbit-loader">
+                    <div class="planet"></div>
+                    <div class="orbit">
+                        <div class="satellite"></div>
+                    </div>
+                </div>
+                <p class="loading-text">Traversing the cosmos for knowledge...</p>
+            </div>
+        </section>
+        
+        <!-- Results Section (Hidden by default) -->
+        <section id="results-section" class="results-section hidden">
+            <div class="results-container">
+                <div class="results-card">
+                    <div class="card-header">
+                        <h2 id="result-title" class="result-title">Title</h2>
+                        <div class="card-controls">
+                            <button id="expand-btn" class="control-button" aria-label="Expand">
+                                <i class="fas fa-expand-alt"></i>
+                            </button>
+                            <button id="close-btn" class="control-button" aria-label="Close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p id="result-summary" class="result-summary"></p>
+                    </div>
+                    <div class="card-footer">
+                        <a id="wiki-link" href="#" target="_blank" class="wiki-button">
+                            Read on Wikipedia <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Error Section (Hidden by default) -->
+        <section id="error-section" class="error-section hidden">
+            <div class="error-container">
+                <svg class="error-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+                </svg>
+                <h2 class="error-title">Cosmic Interference Detected</h2>
+                <p id="error-message" class="error-message">Unable to retrieve information from the knowledge base.</p>
+                <button id="try-again-btn" class="try-again-button">Try Again</button>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="cosmic-footer">
+            <div class="starfield-bottom"></div>
+            <p class="footer-text">© 2023 WikiGalaxy | Explore the Universe of Knowledge</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">About</a>
+                <a href="https://www.wikipedia.org/" target="_blank" class="footer-link">Wikipedia</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/three_background.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ui_effects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
