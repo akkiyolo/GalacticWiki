@@ -4,6 +4,10 @@ WikiGalaxy is a web application designed for quick and easy knowledge discovery.
 
 ---
 
+<img width="1899" height="969" alt="image" src="https://github.com/user-attachments/assets/c6894a8e-0693-4b85-9ec3-90e0d46e8d52" />
+
+---
+
 ## 🚀 Project Description
 
 This project uses a **Python backend** to interface with the official `wikipedia` library, fetching article summaries based on user searches. The **HTML, CSS, and JavaScript frontend** provides a seamless user experience, allowing anyone to type in a query and get a summary without ever leaving the site. It's the perfect tool for quick lookups, research, or satisfying your curiosity.
@@ -17,10 +21,6 @@ This project uses a **Python backend** to interface with the official `wikipedia
 * **Seamless Wikipedia Integration**: Utilizes the powerful `wikipedia` library in Python for accurate results.
 * **Clean & Modern UI**: A beautiful, dark-themed interface designed for a comfortable and engaging reading experience.
 * **Direct Link to Source**: Includes a "Read On Wikipedia" button that takes the user directly to the full article for a deeper dive.
-
----
-
-<img width="1899" height="969" alt="image" src="https://github.com/user-attachments/assets/c6894a8e-0693-4b85-9ec3-90e0d46e8d52" />
 
 ---
 
